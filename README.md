@@ -143,15 +143,15 @@ The **ContentComponent** content type snippet contains the ContentItem Linked it
 
 ```json
  "elements": {
-        "contentcomponent__contentitem": {
-          "type": "modular_content",
-          "name": "ContentItem",
-          "value": [
-            "home"
-          ]
-        }
-      }
-      //...
+    "contentcomponent__contentitem": {
+      "type": "modular_content",
+      "name": "ContentItem",
+      "value": [
+        "home"
+      ]
+    }
+  }
+  //...
 ```
 
 ## Content Types
