@@ -77,7 +77,7 @@ For information about handlebars templates, see:
 
 - https://handlebarsjs.com/
 
-## Usage
+## CMS User Usage
 
 To use this prototype, the CMS user creates reusable content items using Fragment and Page content types. Then, the user creates reusable CMS Component items that specify one or more content items or images or other data and how to render that data. Finally, the user creates or updates Page entries to specify which CMS Components should populate regions in the layout for those pages.
 
@@ -93,11 +93,71 @@ For this prototype, any Page item or Fragment item must have at least a title, a
 - **Description**: Text, required.
 - **MainImage**: Asset, exactly one, optional (or implement two snippets, one optional and one required).
 
+In an item, this data appears with a structure like the following:
+
+```json
+{
+  "item": {
+    "elements": {
+      "commoncontent__title": {
+        "type": "text",
+        "name": "Title",
+        "value": "Home Page Title"
+      },
+      "commoncontent__description": {
+        "type": "text",
+        "name": "Description",
+        "value": "Home Page Description"
+      },
+      "commoncontent__mainimage": {
+        "type": "asset",
+        "name": "MainImage",
+        "value": [
+          {
+            "name": "photo-1574068468668-a05a11f871da.jpg",
+            "description": null,
+            "type": "image/jpeg",
+            "size": 871156,
+            "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+            "width": 2250,
+            "height": 4000,
+            "renditions": {}
+          }
+        ]
+      },
+      ...
+```
+
 ### The **ContentComponent** Content Type Snippet
 
 The **ContentComponent** content type snippet contains the ContentItem Linked item field that allows the CMS user to select an item. Multiple CMS Component content types use this content type snippet.
 
+```json
+ "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": [
+            "home"
+          ]
+        }
+      }
+```
+
 - **ContentItem**: Linked items, optional (or implement two snippets, one optional and one required), single item (any Page or Fragment content type).
+
+```json
+ "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": [
+            "home"
+          ]
+        }
+      }
+      ...
+```
 
 ## Content Types
 
@@ -109,12 +169,92 @@ The **PageContent** content type snippet contains the MainComponents Linked item
 
 - **MainComponents**: Linked items (RteComponent, BannerComponent, ImageCollectionComponent, and other CMS Component content types)
 
+```json
+ "elements": {
+      "commoncontent__title": {
+        "type": "text",
+        "name": "Title",
+        "value": "Home Page Title"
+      },
+      "commoncontent__description": {
+        "type": "text",
+        "name": "Description",
+        "value": "Home Page Description"
+      },
+      "commoncontent__mainimage": {
+        "type": "asset",
+        "name": "MainImage",
+        "value": [
+          {
+            "name": "photo-1574068468668-a05a11f871da.jpg",
+            "description": null,
+            "type": "image/jpeg",
+            "size": 871156,
+            "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+            "width": 2250,
+            "height": 4000,
+            "renditions": {}
+          }
+        ]
+      },
+      "pagecontent__maincomponents": {
+        "type": "modular_content",
+        "name": "MainComponents",
+        "value": [
+          "first_image_collection_component",
+          "first_banner_component",
+          "first_rte_component"
+        ]
+      }
+      ...
+```      
+
 ### The SimplePage Page Content Type
 
 The SimplePage content type is an example of a Page content type that includes the CommonContent content type snippet and the MainComponents content type snippet.
 
 - **CommonContent** (content type snippet)
 - **PageComponents** (content type snippet)
+
+```json
+ "elements": {
+      "commoncontent__title": {
+        "type": "text",
+        "name": "Title",
+        "value": "Home Page Title"
+      },
+      "commoncontent__description": {
+        "type": "text",
+        "name": "Description",
+        "value": "Home Page Description"
+      },
+      "commoncontent__mainimage": {
+        "type": "asset",
+        "name": "MainImage",
+        "value": [
+          {
+            "name": "photo-1574068468668-a05a11f871da.jpg",
+            "description": null,
+            "type": "image/jpeg",
+            "size": 871156,
+            "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+            "width": 2250,
+            "height": 4000,
+            "renditions": {}
+          }
+        ]
+      },
+      "pagecontent__maincomponents": {
+        "type": "modular_content",
+        "name": "MainComponents",
+        "value": [
+          "first_image_collection_component",
+          "first_banner_component",
+          "first_rte_component"
+        ]
+      }
+      ...
+```      
 
 ### The SimpleFragment Fragment Content Type
 
@@ -129,11 +269,60 @@ The **ImageCollection** content type is an example of a Fragment content type th
 - **ContentComponent** (content type snippet)
 - **Images**: Asset, required
 
+```json
+      "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": []
+        },
+        "images": {
+          "type": "asset",
+          "name": "Images",
+          "value": [
+            {
+              "name": "photo-1516233758813-a38d024919c5.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 97726,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/b54c53aa-cb43-4fd3-bd09-d5b3dc53f0f1/photo-1516233758813-a38d024919c5.jpg",
+              "width": 800,
+              "height": 1199,
+              "renditions": {}
+            },
+            {
+              "name": "photo-1574068468668-a05a11f871da.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 871156,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+              "width": 2250,
+              "height": 4000,
+              "renditions": {}
+            }
+          ]
+        }
+        ...
+```
+
 ### The **RteTemplate** Content Type
 
 The **RteTemplate** content type contains the RteTemplate Rich Text Editor (RTE) field that can contain HTML that can contain handlebars templates. 
 
 - **RteTemplate**: Rich text, required
+
+```json
+"elements": {
+        "rtetemplate": {
+          "type": "rich_text",
+          "name": "RteTemplate",
+          "images": {},
+          "links": {},
+          "modular_content": [],
+          "value": "<h3>{{{commoncontent__title}}}</h3>\n<p>{{{commoncontent__description}}}</p>"
+        }
+        ...
+```
 
 ## CMS Component Content Types
 
@@ -146,11 +335,43 @@ The **RteComponent** CMS Component content type contains the **ContentComponent*
 - **ContentComponent** (content type snippet)
 - **RteTemplate**: Linked item, required, single RteTemplate item.
 
+```json
+  "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": [
+            "home"
+          ]
+        },
+        "rtetemplate": {
+          "type": "modular_content",
+          "name": "RteTemplate",
+          "value": [
+            "first_rte_template"
+          ]
+        }
+        ...
+```
+
 ### The **BannerComponent** CMS Component Content Type
 
 The **BannerComponent** CMS component content type contains the ContentComponent content type snippet that contains the ContentItem Linked items field that lets the CMS user select a content item to render as a banner.
 
 - **ContentComponent** content type snippet
+
+```json
+  "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": [
+            "home"
+          ]
+        }
+      }
+      ...
+```
 
 ### The **ImageCollectionComponent** CMS Component Content Type
 
@@ -160,6 +381,42 @@ The **ImageCollectionComponent** CMS Component content type contains the ImageIt
 - **ImageItems**: Linked item, required, ImageCollection content type
 - **ImageHeight**: Number, required
 - **ImageWidth**: Number, required
+
+```json
+ "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": []
+        },
+        "images": {
+          "type": "asset",
+          "name": "Images",
+          "value": [
+            {
+              "name": "photo-1516233758813-a38d024919c5.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 97726,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/b54c53aa-cb43-4fd3-bd09-d5b3dc53f0f1/photo-1516233758813-a38d024919c5.jpg",
+              "width": 800,
+              "height": 1199,
+              "renditions": {}
+            },
+            {
+              "name": "photo-1636246441747-7d7f83f4629c.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 112254,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/36d99871-307b-4674-9c4a-b10f8c885f93/photo-1636246441747-7d7f83f4629c.jpg",
+              "width": 800,
+              "height": 1200,
+              "renditions": {}
+            }
+          ]
+        }
+        ...
+```
 
 ## Function Library
 
@@ -632,14 +889,13 @@ This JSON represents an example kontent.aipage item that includes data to drive 
   }
 }
 ```
-## Usage
+## Developer Usage
 
 1. Create required content types and items in a kontent.ai project.
 2. Copy the access token for the kontent.ai project.
 3. Run the following commands:
 
 ```sh
-npx create-react-app kontent.components
 gh repo clone deliverystack/kontent.components
 cd kontent.components
 npm install handlebars 
