@@ -162,42 +162,42 @@ The **PageContent** content type snippet contains the MainComponents Linked item
 
 ```json
 "elements": {
-      "commoncontent__title": {
-        "type": "text",
-        "name": "Title",
-        "value": "Home Page Title"
-      },
-      "commoncontent__description": {
-        "type": "text",
-        "name": "Description",
-        "value": "Home Page Description"
-      },
-      "commoncontent__mainimage": {
-        "type": "asset",
-        "name": "MainImage",
-        "value": [
-          {
-            "name": "photo-1574068468668-a05a11f871da.jpg",
-            "description": null,
-            "type": "image/jpeg",
-            "size": 871156,
-            "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
-            "width": 2250,
-            "height": 4000,
-            "renditions": {}
-          }
-        ]
-      },
-      "pagecontent__maincomponents": {
-        "type": "modular_content",
-        "name": "MainComponents",
-        "value": [
-          "first_image_collection_component",
-          "first_banner_component",
-          "first_rte_component"
-        ]
+  "commoncontent__title": {
+    "type": "text",
+    "name": "Title",
+    "value": "Home Page Title"
+  },
+  "commoncontent__description": {
+    "type": "text",
+    "name": "Description",
+    "value": "Home Page Description"
+  },
+  "commoncontent__mainimage": {
+    "type": "asset",
+    "name": "MainImage",
+    "value": [
+      {
+        "name": "photo-1574068468668-a05a11f871da.jpg",
+        "description": null,
+        "type": "image/jpeg",
+        "size": 871156,
+        "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+        "width": 2250,
+        "height": 4000,
+        "renditions": {}
       }
-      //...
+    ]
+  },
+  "pagecontent__maincomponents": {
+    "type": "modular_content",
+    "name": "MainComponents",
+    "value": [
+      "first_image_collection_component",
+      "first_banner_component",
+      "first_rte_component"
+    ]
+  }
+  //...
 }
 ```      
 
@@ -209,43 +209,43 @@ The SimplePage content type is an example of a Page content type that includes t
 - **PageComponents** (content type snippet)
 
 ```json
- "elements": {
-      "commoncontent__title": {
-        "type": "text",
-        "name": "Title",
-        "value": "Home Page Title"
-      },
-      "commoncontent__description": {
-        "type": "text",
-        "name": "Description",
-        "value": "Home Page Description"
-      },
-      "commoncontent__mainimage": {
-        "type": "asset",
-        "name": "MainImage",
-        "value": [
-          {
-            "name": "photo-1574068468668-a05a11f871da.jpg",
-            "description": null,
-            "type": "image/jpeg",
-            "size": 871156,
-            "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
-            "width": 2250,
-            "height": 4000,
-            "renditions": {}
-          }
-        ]
-      },
-      "pagecontent__maincomponents": {
-        "type": "modular_content",
-        "name": "MainComponents",
-        "value": [
-          "first_image_collection_component",
-          "first_banner_component",
-          "first_rte_component"
-        ]
+"elements": {
+  "commoncontent__title": {
+    "type": "text",
+    "name": "Title",
+    "value": "Home Page Title"
+  },
+  "commoncontent__description": {
+    "type": "text",
+    "name": "Description",
+    "value": "Home Page Description"
+  },
+  "commoncontent__mainimage": {
+    "type": "asset",
+    "name": "MainImage",
+    "value": [
+      {
+        "name": "photo-1574068468668-a05a11f871da.jpg",
+        "description": null,
+        "type": "image/jpeg",
+        "size": 871156,
+        "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+        "width": 2250,
+        "height": 4000,
+        "renditions": {}
       }
-      //...
+    ]
+  },
+  "pagecontent__maincomponents": {
+    "type": "modular_content",
+    "name": "MainComponents",
+    "value": [
+      "first_image_collection_component",
+      "first_banner_component",
+      "first_rte_component"
+    ]
+  }
+  //...
 }
 ```      
 
@@ -263,39 +263,39 @@ The **ImageCollection** content type is an example of a Fragment content type th
 - **Images**: Asset, required
 
 ```json
-      "elements": {
-        "contentcomponent__contentitem": {
-          "type": "modular_content",
-          "name": "ContentItem",
-          "value": []
-        },
-        "images": {
-          "type": "asset",
-          "name": "Images",
-          "value": [
-            {
-              "name": "photo-1516233758813-a38d024919c5.jpg",
-              "description": null,
-              "type": "image/jpeg",
-              "size": 97726,
-              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/b54c53aa-cb43-4fd3-bd09-d5b3dc53f0f1/photo-1516233758813-a38d024919c5.jpg",
-              "width": 800,
-              "height": 1199,
-              "renditions": {}
-            },
-            {
-              "name": "photo-1574068468668-a05a11f871da.jpg",
-              "description": null,
-              "type": "image/jpeg",
-              "size": 871156,
-              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
-              "width": 2250,
-              "height": 4000,
-              "renditions": {}
-            }
-          ]
-        }
-        //...
+"elements": {
+  "contentcomponent__contentitem": {
+    "type": "modular_content",
+    "name": "ContentItem",
+    "value": []
+  },
+  "images": {
+    "type": "asset",
+    "name": "Images",
+    "value": [
+      {
+        "name": "photo-1516233758813-a38d024919c5.jpg",
+        "description": null,
+        "type": "image/jpeg",
+        "size": 97726,
+        "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/b54c53aa-cb43-4fd3-bd09-d5b3dc53f0f1/photo-1516233758813-a38d024919c5.jpg",
+        "width": 800,
+        "height": 1199,
+        "renditions": {}
+      },
+      {
+        "name": "photo-1574068468668-a05a11f871da.jpg",
+        "description": null,
+        "type": "image/jpeg",
+        "size": 871156,
+        "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+        "width": 2250,
+        "height": 4000,
+        "renditions": {}
+      }
+    ]
+  }
+  //...
 }
 ```
 
@@ -307,15 +307,15 @@ The **RteTemplate** content type contains the RteTemplate Rich Text Editor (RTE)
 
 ```json
 "elements": {
-        "rtetemplate": {
-          "type": "rich_text",
-          "name": "RteTemplate",
-          "images": {},
-          "links": {},
-          "modular_content": [],
-          "value": "<h3>{{{commoncontent__title}}}</h3>\n<p>{{{commoncontent__description}}}</p>"
-        }
-        //...
+  "rtetemplate": {
+    "type": "rich_text",
+    "name": "RteTemplate",
+    "images": {},
+    "links": {},
+    "modular_content": [],
+    "value": "<h3>{{{commoncontent__title}}}</h3>\n<p>{{{commoncontent__description}}}</p>"
+  }
+  //...
 }
 ```
 
@@ -331,22 +331,22 @@ The **RteComponent** CMS Component content type contains the **ContentComponent*
 - **RteTemplate**: Linked item, required, single RteTemplate item.
 
 ```json
-  "elements": {
-        "contentcomponent__contentitem": {
-          "type": "modular_content",
-          "name": "ContentItem",
-          "value": [
-            "home"
-          ]
-        },
-        "rtetemplate": {
-          "type": "modular_content",
-          "name": "RteTemplate",
-          "value": [
-            "first_rte_template"
-          ]
-        }
-      //...
+"elements": {
+  "contentcomponent__contentitem": {
+    "type": "modular_content",
+    "name": "ContentItem",
+    "value": [
+      "home"
+    ]
+  },
+  "rtetemplate": {
+    "type": "modular_content",
+    "name": "RteTemplate",
+    "value": [
+      "first_rte_template"
+    ]
+  }
+  //...
 }
 ```
 
@@ -357,16 +357,15 @@ The **BannerComponent** CMS component content type contains the ContentComponent
 - **ContentComponent** content type snippet
 
 ```json
-  "elements": {
-        "contentcomponent__contentitem": {
-          "type": "modular_content",
-          "name": "ContentItem",
-          "value": [
-            "home"
-          ]
-        }
-      }
-      //...
+"elements": {
+    "contentcomponent__contentitem": {
+      "type": "modular_content",
+      "name": "ContentItem",
+      "value": [
+        "home"
+      ]
+    }
+    //...
 }
 ```
 
@@ -380,39 +379,39 @@ The **ImageCollectionComponent** CMS Component content type contains the ImageIt
 - **ImageWidth**: Number, required
 
 ```json
- "elements": {
-        "contentcomponent__contentitem": {
-          "type": "modular_content",
-          "name": "ContentItem",
-          "value": []
-        },
-        "images": {
-          "type": "asset",
-          "name": "Images",
-          "value": [
-            {
-              "name": "photo-1516233758813-a38d024919c5.jpg",
-              "description": null,
-              "type": "image/jpeg",
-              "size": 97726,
-              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/b54c53aa-cb43-4fd3-bd09-d5b3dc53f0f1/photo-1516233758813-a38d024919c5.jpg",
-              "width": 800,
-              "height": 1199,
-              "renditions": {}
-            },
-            {
-              "name": "photo-1636246441747-7d7f83f4629c.jpg",
-              "description": null,
-              "type": "image/jpeg",
-              "size": 112254,
-              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/36d99871-307b-4674-9c4a-b10f8c885f93/photo-1636246441747-7d7f83f4629c.jpg",
-              "width": 800,
-              "height": 1200,
-              "renditions": {}
-            }
-          ]
-        }
-      //...
+"elements": {
+  "contentcomponent__contentitem": {
+    "type": "modular_content",
+    "name": "ContentItem",
+    "value": []
+  },
+  "images": {
+    "type": "asset",
+    "name": "Images",
+    "value": [
+      {
+        "name": "photo-1516233758813-a38d024919c5.jpg",
+        "description": null,
+        "type": "image/jpeg",
+        "size": 97726,
+        "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/b54c53aa-cb43-4fd3-bd09-d5b3dc53f0f1/photo-1516233758813-a38d024919c5.jpg",
+        "width": 800,
+        "height": 1199,
+        "renditions": {}
+      },
+      {
+        "name": "photo-1636246441747-7d7f83f4629c.jpg",
+        "description": null,
+        "type": "image/jpeg",
+        "size": 112254,
+        "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/36d99871-307b-4674-9c4a-b10f8c885f93/photo-1636246441747-7d7f83f4629c.jpg",
+        "width": 800,
+        "height": 1200,
+        "renditions": {}
+      }
+    ]
+  }
+  //...
 }
 ```
 
@@ -429,66 +428,34 @@ The `flattenItem()` function accepts a kontent.ai item as a parameter and return
 Example Input:
 
 ```json
-    "system": {
-      "id": "270a6b85-d95d-4863-96ed-6040188227d8",
-      "name": "Home",
-      "codename": "home",
-      "language": "default",
-      "type": "simplepage",
-      "collection": "default",
-      "sitemap_locations": [],
-      "last_modified": "2024-06-12T21:11:31.4612268Z",
-      "workflow": "default",
-      "workflow_step": "published"
-    },
-    "elements": {
-      "commoncontent__title": {
-        "type": "text",
-        "name": "Title",
-        "value": "Home Page Title"
-      },
-      "commoncontent__description": {
-        "type": "text",
-        "name": "Description",
-        "value": "Home Page Description"
-      },
-      "commoncontent__mainimage": {
-        "type": "asset",
-        "name": "MainImage",
-        "value": [
-          {
-            "name": "photo-1574068468668-a05a11f871da.jpg",
-            "description": null,
-            "type": "image/jpeg",
-            "size": 871156,
-            "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
-            "width": 2250,
-            "height": 4000,
-            "renditions": {}
-          }
-        ]
-      },
-      "pagecontent__maincomponents": {
-        "type": "modular_content",
-        "name": "MainComponents",
-        "value": [
-          "first_image_collection_component",
-          "first_banner_component",
-          "first_rte_component"
-        ]
-      }
-    }
-    //...
-}
-```
-
-Example Output:
-
-```json
-{
-    "commoncontent__title": "Home Page Title",
-    "commoncontent__mainimage": [
-        {
+"system": {
+  "id": "270a6b85-d95d-4863-96ed-6040188227d8",
+  "name": "Home",
+  "codename": "home",
+  "language": "default",
+  "type": "simplepage",
+  "collection": "default",
+  "sitemap_locations": [],
+  "last_modified": "2024-06-12T21:11:31.4612268Z",
+  "workflow": "default",
+  "workflow_step": "published"
+},
+"elements": {
+  "commoncontent__title": {
+    "type": "text",
+    "name": "Title",
+    "value": "Home Page Title"
+  },
+  "commoncontent__description": {
+    "type": "text",
+    "name": "Description",
+    "value": "Home Page Description"
+  },
+  "commoncontent__mainimage": {
+    "type": "asset",
+    "name": "MainImage",
+    "value": [
+      {
         "name": "photo-1574068468668-a05a11f871da.jpg",
         "description": null,
         "type": "image/jpeg",
@@ -497,14 +464,45 @@ Example Output:
         "width": 2250,
         "height": 4000,
         "renditions": {}
-        }
-    ],
-    "pagecontent__maincomponents": [
-          "first_image_collection_component",
-          "first_banner_component",
-          "first_rte_component"
+      }
     ]
-    //...
+  },
+  "pagecontent__maincomponents": {
+    "type": "modular_content",
+    "name": "MainComponents",
+    "value": [
+      "first_image_collection_component",
+      "first_banner_component",
+      "first_rte_component"
+    ]
+  }
+}
+//...
+```
+
+Example Output:
+
+```json
+{
+  "commoncontent__title": "Home Page Title",
+  "commoncontent__mainimage": [
+      {
+      "name": "photo-1574068468668-a05a11f871da.jpg",
+      "description": null,
+      "type": "image/jpeg",
+      "size": 871156,
+      "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+      "width": 2250,
+      "height": 4000,
+      "renditions": {}
+      }
+  ],
+  "pagecontent__maincomponents": [
+        "first_image_collection_component",
+        "first_banner_component",
+        "first_rte_component"
+  ]
+  //...
 }
 ```
 
