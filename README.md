@@ -183,7 +183,7 @@ Other than `CmsComponents.jsx`, `Stringify.jsx`, and `UseCmsItem.jsx`, each of t
 
 The `CmsBannerComponent.jsx` flattens the item and renders a banner using any Page or Fragment item as a data source.
 
-[CmsBannerComponent.jsx](./src/components.CmsBannerComponent.jsx)
+[CmsBannerComponent.jsx](./src/components/CmsBannerComponent.jsx)
 
 ### The `CmsComponents.jsx` React Component
 
