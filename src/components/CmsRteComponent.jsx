@@ -17,8 +17,6 @@ const CmsRteComponent = ({ props, component }) => {
     // compile and apply the handlebars template to the content item
     // this is only unsafe if we don't trust our CMS users
     // in which case we're already hosed
-
-//    return <>{JSON.stringify(flattenedItem, null, 2)}</>;
     return (<div dangerouslySetInnerHTML={ {__html: Handlebars.compile(handlebarsTemplate)(flattenedItem)} } />);
 }
 

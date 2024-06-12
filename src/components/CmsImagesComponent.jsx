@@ -1,4 +1,3 @@
-//import Stringify from "./Stringify.jsx";
 // return an array of objects that contain the required image properties
 const getImages = (props, component) => {
     let images = [];

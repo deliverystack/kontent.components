@@ -1,9 +1,9 @@
 const EmbedCmsEntry = ({ props }) => {
     return(
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.cmsEntry = "${props}";`
-        }}
+        <script
+            dangerouslySetInnerHTML={{
+                __html: `window.cmsEntry = "${props}";`
+          }}
       />)
 }
 
