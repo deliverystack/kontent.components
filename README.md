@@ -516,7 +516,7 @@ The `getItem()` function accepts Kontent.ai codename as a parameter, uses the `f
 
 ## React Components
 
-Other than `CmsComponents.jsx`, `Stringify.jsx`, and `UseCmsItem.jsx`, each of the React components receives as parameters the kontent.ai item and a key that identifies the data in that item for the component to use.
+Other than `CmsComponents.jsx`, `EmbedCmsEntry.jsx`, `Stringify.jsx`, and `UseCmsItem.jsx`, each of the React components receives as parameters the kontent.ai item and a key that identifies the data in that item for the component to use.
 
 ### The `CmsBannerComponent.jsx` React Component
 
