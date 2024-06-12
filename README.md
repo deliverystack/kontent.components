@@ -634,14 +634,15 @@ This JSON represents an example kontent.aipage item that includes data to drive 
 ```
 ## Usage
 
-1. Create content types and items.
-2.
+1. Create required content types and items in a kontent.ai project.
+2. Copy the access token for the kontent.ai project.
+3. Run the following commands:
 
 ```sh
 npx create-react-app kontent.components
 gh repo clone deliverystack/kontent.components
 cd kontent.components
 npm install handlebars 
-code . # At the very least, change token in /src/lib.js
+code . # At the very least, change the access token in /src/lib.js
 npm start &
 ```
