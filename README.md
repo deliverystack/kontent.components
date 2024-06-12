@@ -2,9 +2,13 @@
 
 Prototype for Data-Driven Web Page Presentation Control with the kontent.ai CMS
 
+![Process Diagram](public/generic-page-rendering.webp "Process Diagram")
+
+- [Demo](./public/demo.mp4)
+
 ## Introduction
 
-This clog describes a prototype for data-driven web page presentation control using the Kontent.ai Content Management System (CMS).
+This clog describes a prototype for data-driven web page presentation control using the kontent.ai Content Management System (CMS).
 
 For additional background information, see the following blog post:
 
