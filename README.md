@@ -123,7 +123,12 @@ For this prototype, any Page item or Fragment item must have at least a title, a
           }
         ]
       },
-      ...
+      //...
+    }
+    //...
+  }
+  //...
+}
 ```
 
 ### The **ContentComponent** Content Type Snippet
@@ -143,7 +148,6 @@ The **ContentComponent** content type snippet contains the ContentItem Linked it
         }
       }
       //...
-}
 ```
 
 ## Content Types
