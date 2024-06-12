@@ -165,11 +165,92 @@ The **ImageCollectionComponent** CMS Component content type contains the ImageIt
 
 This prototype includes the `/src/lib.js` library that contains two functions.
 
+[lib.js](./src/lib.js)
+
 ### The `flattenItem()` Function
 
 The `flattenItem()` function accepts a kontent.ai item as a parameter and returns an object with the same keys and values in a simplified structure.
 
-//TODO: example
+Example Input:
+
+```json
+    "system": {
+      "id": "270a6b85-d95d-4863-96ed-6040188227d8",
+      "name": "Home",
+      "codename": "home",
+      "language": "default",
+      "type": "simplepage",
+      "collection": "default",
+      "sitemap_locations": [],
+      "last_modified": "2024-06-12T21:11:31.4612268Z",
+      "workflow": "default",
+      "workflow_step": "published"
+    },
+    "elements": {
+      "commoncontent__title": {
+        "type": "text",
+        "name": "Title",
+        "value": "Home Page Title"
+      },
+      "commoncontent__description": {
+        "type": "text",
+        "name": "Description",
+        "value": "Home Page Description"
+      },
+      "commoncontent__mainimage": {
+        "type": "asset",
+        "name": "MainImage",
+        "value": [
+          {
+            "name": "photo-1574068468668-a05a11f871da.jpg",
+            "description": null,
+            "type": "image/jpeg",
+            "size": 871156,
+            "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+            "width": 2250,
+            "height": 4000,
+            "renditions": {}
+          }
+        ]
+      },
+      "pagecontent__maincomponents": {
+        "type": "modular_content",
+        "name": "MainComponents",
+        "value": [
+          "first_image_collection_component",
+          "first_banner_component",
+          "first_rte_component"
+        ]
+      }
+    }
+
+
+```
+
+Example Output:
+
+```json
+{
+    "commoncontent__title": "Home Page Title",
+    "commoncontent__mainimage": [
+        {
+        "name": "photo-1574068468668-a05a11f871da.jpg",
+        "description": null,
+        "type": "image/jpeg",
+        "size": 871156,
+        "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+        "width": 2250,
+        "height": 4000,
+        "renditions": {}
+        }
+    ],
+    "pagecontent__maincomponents": [
+          "first_image_collection_component",
+          "first_banner_component",
+          "first_rte_component"
+    ]
+}
+```
 
 ### The `getItem()` Function
 
@@ -189,29 +270,32 @@ The `CmsBannerComponent.jsx` flattens the item and renders a banner using any Pa
 
 The `CmsComponents.jsx` React component receives as parameters the Kontent.ai item and the identifier of a field in that item that designates the CMS Components to invoke. It then iterates those CMS components and invokes the corresponding React components based on the content type of the CMS Component.
 
-//TODO: Link
+[CmsComponents.jsx](./src/components/CmsComponents.jsx)
 
 ### The `CmsImagesComponent.jsx` React Component
 
 The `CmsImagesComponent.jsx` React component renders the images specified in the CMS Component. 
 
-//TODO: Link
+[CmsImagesComponent.jsx](./src/components/CmsImagesComponent.jsx)
 
 ### The `CmsRteComponent.jsx` React Component
 
 The `CmsRteComponent.jsx` React component retrieves an RTE field value that may contain handlebars templates and uses the flattened kontent.ai item to render those templates.
 
-//TODO: Link
+[CmsRteComponent.jsx](./src/components/CmsRteComponent.jsx)
 
 ### The `Stringify.jsx` React Component
 
 The `Stringify.jsx` React retrieves component renders a raw JSON structure, which can be convenient while debugging.
 
-//TODO: Link
+[Stringify.jsx](./src/components/Stringify.jsx)
 
 ### The `UseCmsItem.jsx` React Component
 
 The `UseCmsItem.jsx` React Component provides an example of client-side code that uses the JSON representation of the item.
+
+[UseCmsItem.jsx](./src/components/UseCmsItem.jsx)
+
 
 ## The App
 
@@ -219,8 +303,335 @@ The `/src/App.js` application retrieves the kontent.ai item that has a codename 
 
 If no matching item exists in Kontent.ai, the app renders an error message. Otherwise, it passes the retrieved item and the identifier of one of its fields that contains CMS Components to the `CmsComponents` React component. It then uses the `Stringify` React component to render the raw JSON retrieved from of that item.
 
-//TODO: Link
+[App.js](./src/App.js)
 
+## Example Page Item
+
+This JSON represents an example kontent.aipage item that includes data to drive page presentation.
+
+```json
+{
+  "item": {
+    "system": {
+      "id": "270a6b85-d95d-4863-96ed-6040188227d8",
+      "name": "Home",
+      "codename": "home",
+      "language": "default",
+      "type": "simplepage",
+      "collection": "default",
+      "sitemap_locations": [],
+      "last_modified": "2024-06-12T21:11:31.4612268Z",
+      "workflow": "default",
+      "workflow_step": "published"
+    },
+    "elements": {
+      "commoncontent__title": {
+        "type": "text",
+        "name": "Title",
+        "value": "Home Page Title"
+      },
+      "commoncontent__description": {
+        "type": "text",
+        "name": "Description",
+        "value": "Home Page Description"
+      },
+      "commoncontent__mainimage": {
+        "type": "asset",
+        "name": "MainImage",
+        "value": [
+          {
+            "name": "photo-1574068468668-a05a11f871da.jpg",
+            "description": null,
+            "type": "image/jpeg",
+            "size": 871156,
+            "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+            "width": 2250,
+            "height": 4000,
+            "renditions": {}
+          }
+        ]
+      },
+      "pagecontent__maincomponents": {
+        "type": "modular_content",
+        "name": "MainComponents",
+        "value": [
+          "first_image_collection_component",
+          "first_banner_component",
+          "first_rte_component"
+        ]
+      }
+    }
+  },
+  "modular_content": {
+    "first_banner_component": {
+      "system": {
+        "id": "5aaa5cbe-99bc-48ae-a60e-d99eeeb2d9ce",
+        "name": "First Banner Component",
+        "codename": "first_banner_component",
+        "language": "default",
+        "type": "bannercomponent",
+        "collection": "default",
+        "sitemap_locations": [],
+        "last_modified": "2024-06-12T20:53:44.2164048Z",
+        "workflow": "default",
+        "workflow_step": "published"
+      },
+      "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": [
+            "home"
+          ]
+        }
+      }
+    },
+    "first_image_collection": {
+      "system": {
+        "id": "82b7023a-4773-495a-bf2b-bba575845c6e",
+        "name": "First Image Collection",
+        "codename": "first_image_collection",
+        "language": "default",
+        "type": "imagecollection",
+        "collection": "default",
+        "sitemap_locations": [],
+        "last_modified": "2024-06-10T21:59:21.446661Z",
+        "workflow": "default",
+        "workflow_step": "published"
+      },
+      "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": []
+        },
+        "images": {
+          "type": "asset",
+          "name": "Images",
+          "value": [
+            {
+              "name": "photo-1516233758813-a38d024919c5.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 97726,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/b54c53aa-cb43-4fd3-bd09-d5b3dc53f0f1/photo-1516233758813-a38d024919c5.jpg",
+              "width": 800,
+              "height": 1199,
+              "renditions": {}
+            },
+            {
+              "name": "photo-1574068468668-a05a11f871da.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 871156,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+              "width": 2250,
+              "height": 4000,
+              "renditions": {}
+            }
+          ]
+        }
+      }
+    },
+    "first_image_collection_component": {
+      "system": {
+        "id": "b3ea6903-03d1-4bf0-82b3-1a6c9ccd86f7",
+        "name": "First Image Collection Component",
+        "codename": "first_image_collection_component",
+        "language": "default",
+        "type": "imagecollectioncomponent",
+        "collection": "default",
+        "sitemap_locations": [],
+        "last_modified": "2024-06-12T20:19:13.6520762Z",
+        "workflow": "default",
+        "workflow_step": "published"
+      },
+      "elements": {
+        "imageitems": {
+          "type": "modular_content",
+          "name": "ImageItems",
+          "value": [
+            "second_image_collection",
+            "first_image_collection"
+          ]
+        },
+        "treatment": {
+          "type": "multiple_choice",
+          "name": "Treatment",
+          "value": [
+            {
+              "name": "gallery",
+              "codename": "gallery"
+            }
+          ]
+        },
+        "imageheight": {
+          "type": "number",
+          "name": "ImageHeight",
+          "value": 150
+        },
+        "imagewidth": {
+          "type": "number",
+          "name": "ImageWidth",
+          "value": 150
+        }
+      }
+    },
+    "first_rte_component": {
+      "system": {
+        "id": "dd742464-a287-4869-a9ed-4203075f9781",
+        "name": "First RTE Component",
+        "codename": "first_rte_component",
+        "language": "default",
+        "type": "rtecomponent",
+        "collection": "default",
+        "sitemap_locations": [],
+        "last_modified": "2024-06-12T21:11:07.5659418Z",
+        "workflow": "default",
+        "workflow_step": "published"
+      },
+      "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": [
+            "home"
+          ]
+        },
+        "rtetemplate": {
+          "type": "modular_content",
+          "name": "RteTemplate",
+          "value": [
+            "first_rte_template"
+          ]
+        }
+      }
+    },
+    "first_rte_template": {
+      "system": {
+        "id": "ddee4b00-32f5-4178-8ec5-eefd4b989fcf",
+        "name": "First RTE Template",
+        "codename": "first_rte_template",
+        "language": "default",
+        "type": "rtetemplate",
+        "collection": "default",
+        "sitemap_locations": [],
+        "last_modified": "2024-06-12T21:29:08.9919227Z",
+        "workflow": "default",
+        "workflow_step": "published"
+      },
+      "elements": {
+        "rtetemplate": {
+          "type": "rich_text",
+          "name": "RteTemplate",
+          "images": {},
+          "links": {},
+          "modular_content": [],
+          "value": "<h3>{{{commoncontent__title}}}</h3>\n<p>{{{commoncontent__description}}}</p>"
+        }
+      }
+    },
+    "home": {
+      "system": {
+        "id": "270a6b85-d95d-4863-96ed-6040188227d8",
+        "name": "Home",
+        "codename": "home",
+        "language": "default",
+        "type": "simplepage",
+        "collection": "default",
+        "sitemap_locations": [],
+        "last_modified": "2024-06-12T21:11:31.4612268Z",
+        "workflow": "default",
+        "workflow_step": "published"
+      },
+      "elements": {
+        "commoncontent__title": {
+          "type": "text",
+          "name": "Title",
+          "value": "Home Page Title"
+        },
+        "commoncontent__description": {
+          "type": "text",
+          "name": "Description",
+          "value": "Home Page Description"
+        },
+        "commoncontent__mainimage": {
+          "type": "asset",
+          "name": "MainImage",
+          "value": [
+            {
+              "name": "photo-1574068468668-a05a11f871da.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 871156,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+              "width": 2250,
+              "height": 4000,
+              "renditions": {}
+            }
+          ]
+        },
+        "pagecontent__maincomponents": {
+          "type": "modular_content",
+          "name": "MainComponents",
+          "value": [
+            "first_image_collection_component",
+            "first_banner_component",
+            "first_rte_component"
+          ]
+        }
+      }
+    },
+    "second_image_collection": {
+      "system": {
+        "id": "3d2b6289-ebb4-4dfb-91e8-7da6a7a9dc85",
+        "name": "Second Image Collection",
+        "codename": "second_image_collection",
+        "language": "default",
+        "type": "imagecollection",
+        "collection": "default",
+        "sitemap_locations": [],
+        "last_modified": "2024-06-10T22:00:08.5646537Z",
+        "workflow": "default",
+        "workflow_step": "published"
+      },
+      "elements": {
+        "contentcomponent__contentitem": {
+          "type": "modular_content",
+          "name": "ContentItem",
+          "value": []
+        },
+        "images": {
+          "type": "asset",
+          "name": "Images",
+          "value": [
+            {
+              "name": "photo-1516233758813-a38d024919c5.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 97726,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/b54c53aa-cb43-4fd3-bd09-d5b3dc53f0f1/photo-1516233758813-a38d024919c5.jpg",
+              "width": 800,
+              "height": 1199,
+              "renditions": {}
+            },
+            {
+              "name": "photo-1636246441747-7d7f83f4629c.jpg",
+              "description": null,
+              "type": "image/jpeg",
+              "size": 112254,
+              "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/36d99871-307b-4674-9c4a-b10f8c885f93/photo-1636246441747-7d7f83f4629c.jpg",
+              "width": 800,
+              "height": 1200,
+              "renditions": {}
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
 ## Usage
 
 1. Create content types and items.
