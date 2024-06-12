@@ -419,7 +419,7 @@ The **ImageCollectionComponent** CMS Component content type contains the ImageIt
 
 This prototype includes the `/src/lib.js` library that contains two functions.
 
-[lib.js](./src/lib.js)
+- [lib.js](./src/lib.js)
 
 ### The `flattenItem()` Function
 
@@ -518,37 +518,37 @@ Other than `CmsComponents.jsx`, `Stringify.jsx`, and `UseCmsItem.jsx`, each of t
 
 The `CmsBannerComponent.jsx` flattens the item and renders a banner using any Page or Fragment item as a data source.
 
-[CmsBannerComponent.jsx](./src/components/CmsBannerComponent.jsx)
+- [CmsBannerComponent.jsx](./src/components/CmsBannerComponent.jsx)
 
 ### The `CmsComponents.jsx` React Component
 
 The `CmsComponents.jsx` React component receives as parameters the Kontent.ai item and the identifier of a field in that item that designates the CMS Components to invoke. It then iterates those CMS components and invokes the corresponding React components based on the content type of the CMS Component.
 
-[CmsComponents.jsx](./src/components/CmsComponents.jsx)
+- [CmsComponents.jsx](./src/components/CmsComponents.jsx)
 
 ### The `CmsImagesComponent.jsx` React Component
 
 The `CmsImagesComponent.jsx` React component renders the images specified in the CMS Component. 
 
-[CmsImagesComponent.jsx](./src/components/CmsImagesComponent.jsx)
+- [CmsImagesComponent.jsx](./src/components/CmsImagesComponent.jsx)
 
 ### The `CmsRteComponent.jsx` React Component
 
 The `CmsRteComponent.jsx` React component retrieves an RTE field value that may contain handlebars templates and uses the flattened kontent.ai item to render those templates.
 
-[CmsRteComponent.jsx](./src/components/CmsRteComponent.jsx)
+- [CmsRteComponent.jsx](./src/components/CmsRteComponent.jsx)
 
 ### The `Stringify.jsx` React Component
 
 The `Stringify.jsx` React retrieves component renders a raw JSON structure, which can be convenient while debugging.
 
-[Stringify.jsx](./src/components/Stringify.jsx)
+- [Stringify.jsx](./src/components/Stringify.jsx)
 
 ### The `UseCmsItem.jsx` React Component
 
 The `UseCmsItem.jsx` React Component provides an example of client-side code that uses the JSON representation of the item.
 
-[UseCmsItem.jsx](./src/components/UseCmsItem.jsx)
+- [UseCmsItem.jsx](./src/components/UseCmsItem.jsx)
 
 ## The App
 
@@ -556,7 +556,7 @@ The `/src/App.js` application retrieves the kontent.ai item that has a codename 
 
 If no matching item exists in Kontent.ai, the app renders an error message. Otherwise, it passes the retrieved item and the identifier of one of its fields that contains CMS Components to the `CmsComponents` React component. It then uses the `Stringify` React component to render the raw JSON retrieved from of that item.
 
-[App.js](./src/App.js)
+- [App.js](./src/App.js)
 
 ## Example Page Item
 
