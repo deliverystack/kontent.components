@@ -93,8 +93,6 @@ For this prototype, any Page item or Fragment item must have at least a title, a
 - **Description**: Text, required.
 - **MainImage**: Asset, exactly one, optional (or implement two snippets, one optional and one required).
 
-In an item, this data appears with a structure like the following:
-
 ```json
 {
   "item": {
@@ -132,18 +130,6 @@ In an item, this data appears with a structure like the following:
 
 The **ContentComponent** content type snippet contains the ContentItem Linked item field that allows the CMS user to select an item. Multiple CMS Component content types use this content type snippet.
 
-```json
- "elements": {
-        "contentcomponent__contentitem": {
-          "type": "modular_content",
-          "name": "ContentItem",
-          "value": [
-            "home"
-          ]
-        }
-      }
-```
-
 - **ContentItem**: Linked items, optional (or implement two snippets, one optional and one required), single item (any Page or Fragment content type).
 
 ```json
@@ -156,7 +142,8 @@ The **ContentComponent** content type snippet contains the ContentItem Linked it
           ]
         }
       }
-      ...
+      //...
+}
 ```
 
 ## Content Types
@@ -170,7 +157,7 @@ The **PageContent** content type snippet contains the MainComponents Linked item
 - **MainComponents**: Linked items (RteComponent, BannerComponent, ImageCollectionComponent, and other CMS Component content types)
 
 ```json
- "elements": {
+"elements": {
       "commoncontent__title": {
         "type": "text",
         "name": "Title",
@@ -206,7 +193,8 @@ The **PageContent** content type snippet contains the MainComponents Linked item
           "first_rte_component"
         ]
       }
-      ...
+      //...
+}
 ```      
 
 ### The SimplePage Page Content Type
@@ -253,7 +241,8 @@ The SimplePage content type is an example of a Page content type that includes t
           "first_rte_component"
         ]
       }
-      ...
+      //...
+}
 ```      
 
 ### The SimpleFragment Fragment Content Type
@@ -302,7 +291,8 @@ The **ImageCollection** content type is an example of a Fragment content type th
             }
           ]
         }
-        ...
+        //...
+}
 ```
 
 ### The **RteTemplate** Content Type
@@ -321,7 +311,8 @@ The **RteTemplate** content type contains the RteTemplate Rich Text Editor (RTE)
           "modular_content": [],
           "value": "<h3>{{{commoncontent__title}}}</h3>\n<p>{{{commoncontent__description}}}</p>"
         }
-        ...
+        //...
+}
 ```
 
 ## CMS Component Content Types
@@ -351,7 +342,8 @@ The **RteComponent** CMS Component content type contains the **ContentComponent*
             "first_rte_template"
           ]
         }
-        ...
+      //...
+}
 ```
 
 ### The **BannerComponent** CMS Component Content Type
@@ -370,7 +362,8 @@ The **BannerComponent** CMS component content type contains the ContentComponent
           ]
         }
       }
-      ...
+      //...
+}
 ```
 
 ### The **ImageCollectionComponent** CMS Component Content Type
@@ -415,7 +408,8 @@ The **ImageCollectionComponent** CMS Component content type contains the ImageIt
             }
           ]
         }
-        ...
+      //...
+}
 ```
 
 ## Function Library
@@ -480,8 +474,8 @@ Example Input:
         ]
       }
     }
-
-
+    //...
+}
 ```
 
 Example Output:
@@ -506,6 +500,7 @@ Example Output:
           "first_banner_component",
           "first_rte_component"
     ]
+    //...
 }
 ```
 
@@ -552,7 +547,6 @@ The `Stringify.jsx` React retrieves component renders a raw JSON structure, whic
 The `UseCmsItem.jsx` React Component provides an example of client-side code that uses the JSON representation of the item.
 
 [UseCmsItem.jsx](./src/components/UseCmsItem.jsx)
-
 
 ## The App
 
