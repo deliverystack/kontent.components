@@ -172,7 +172,7 @@ The `flattenItem()` function accepts a kontent.ai item as a parameter and return
 //TODO: example
 
 ### The `getItem()` Function
-v
+
 The `getItem()` function accepts Kontent.ai codename as a parameter, uses the `fetch()` function to retrieve the specified item from kontent.ai, and returns a Promise that resolves to a Response as returned by that call to the `fetch()` function.
 
 ## React Components
