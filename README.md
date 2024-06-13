@@ -892,7 +892,7 @@ This JSON represents an example kontent.aipage item that includes data to drive 
 ## Developer Usage
 
 1. Create required content types and items in a kontent.ai project.
-2. Copy the access token for the kontent.ai project.
+2. In `/src/lib.js`, replace &lt;ENVIRONMENT_ID&gt; with the access token for the kontent.ai project.
 3. Run the following commands:
 
 ```sh
