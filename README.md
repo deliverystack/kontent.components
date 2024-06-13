@@ -889,6 +889,7 @@ This JSON represents an example kontent.aipage item that includes data to drive 
   }
 }
 ```
+
 ## Developer Usage
 
 1. Create required content types and items in a kontent.ai project.
