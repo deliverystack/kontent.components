@@ -491,14 +491,14 @@ Example Output:
   "commoncontent__title": "Home Page Title",
   "commoncontent__mainimage": [
       {
-      "name": "photo-1574068468668-a05a11f871da.jpg",
-      "description": null,
-      "type": "image/jpeg",
-      "size": 871156,
-      "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
-      "width": 2250,
-      "height": 4000,
-      "renditions": {}
+          "name": "photo-1574068468668-a05a11f871da.jpg",
+          "description": null,
+          "type": "image/jpeg",
+          "size": 871156,
+          "url": "https://assets-us-01.kc-usercontent.com:443/97d53770-a796-0065-c458-d65e6dcfc537/87dccfda-3798-476b-8128-cee6b37c82f6/photo-1574068468668-a05a11f871da.jpg",
+          "width": 2250,
+          "height": 4000,
+          "renditions": {}
       }
   ],
   "pagecontent__maincomponents": [
