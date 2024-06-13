@@ -2,7 +2,7 @@
 const getImages = (props, component) => {
     let images = [];
     
-    // for each entry that the CMS component specifies, which references images 
+    // for each item that the CMS component specifies, which references images 
     props.modular_content[component].elements.imageitems.value.forEach(imagesItemCode => {
 
         // for each of those referenced images
