@@ -11,9 +11,7 @@ export const flattenItem = (item) => {
 
 // get an the item with the specified codename from kontent.ai
 export const getItem = (codename) => {
-    //TODO: avoid hard-coding
-//    const endpoint = 'https://deliver.kontent.ai/7b7502e3-148e-0051-c8b8-bf5155d8b1e8/items/' + codename + "?depth=2";
-    const endpoint = 'https://deliver.kontent.ai/97d53770-a796-0065-c458-d65e6dcfc537/items/' + codename + "?depth=2";
+    const endpoint = 'https://deliver.kontent.ai/<ENVIRONMENT_ID>/items/' + codename + "?depth=2";
     const httpHeaders = new Headers();
     httpHeaders.append('Accept', 'application/json');
     httpHeaders.append('Content-Type', 'application/json');

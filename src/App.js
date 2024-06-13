@@ -45,8 +45,9 @@ function App() {
     }
 
     // if no such item exists in Kontent.ai
-    if (data["error_code"] === 100) {
-        return <>Handle HTTP 404 - {window.location.pathname.split('/').pop() || 'home'} (last segment of URL path) does not specify a valid Kontent.ai item codename.</>
+    if (data["error_code"] === 100 || data["error_code"] === 1 || !data.item) {
+        return <>Handle HTTP 404 - {window.location.pathname.split('/').pop() || 'home'} (last segment of URL path) does not specify a valid Kontent.ai item codename. Replace &lt;ENVIRONMENT_ID&gt; in /src/lib.js if needed.
+        <pre>{JSON.stringify(data, null, 2)};</pre></>
     }
 
     return (<>
