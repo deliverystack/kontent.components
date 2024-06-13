@@ -546,7 +546,7 @@ The `CmsRteComponent.jsx` React component retrieves an RTE field value that may 
 
 ### The `Stringify.jsx` React Component
 
-The `Stringify.jsx` React retrieves component renders a raw JSON structure, which can be convenient while debugging.
+The `Stringify.jsx` React component renders a raw JSON structure, which can be convenient during development and while debugging.
 
 - [Stringify.jsx](./src/components/Stringify.jsx)
 
