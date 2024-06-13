@@ -12,16 +12,6 @@ function App() {
         getData();
     }, []);
     
-    // make item JSON available to client-side logic
-    // example:
-    // const UseCmsEntry = () => {
-    //     useEffect(() => {
-    //         if (window.cmsPageItem.item !== undefined)
-    //             console.log(window.cmsPageItem);
-    //         }, [])
-    // 
-    //     return(<></>)
-    // }
     useEffect(() => {
         window.cmsPageItem = data;
     }, [data]);

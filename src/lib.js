@@ -23,7 +23,6 @@ export const getItem = (codename) => {
 
     // happens twice in dev mode when <React.StrictMode> in index.js
     // console.log(endpoint);
-
     return fetch(
         endpoint,
         requestOptions
