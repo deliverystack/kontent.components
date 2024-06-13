@@ -895,13 +895,16 @@ This JSON represents an example kontent.aipage item that includes data to drive 
 ## Developer Usage
 
 1. Create required content types and items in a kontent.ai project.
-2. In `/src/lib.js`, replace &lt;ENVIRONMENT_ID&gt; with the access token for the kontent.ai project.
+1. Locate the kontent.ai project identifier.
+
+![Kontent.ai Environment ID](public/kontentai-environment-id.png "Kontent.ai Environment ID")
+
 3. Run the following commands:
 
 ```sh
 gh repo clone deliverystack/kontent.components
 cd kontent.components
-npm install handlebars 
-code . # At the very least, change the access token in /src/lib.js
+npm install
+code . # In /src/lib.js SET &lt;ENVIRONMENT_ID&gt; to kontent.ai environment ID.
 npm start &
 ```
