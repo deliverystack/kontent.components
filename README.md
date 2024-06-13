@@ -486,7 +486,7 @@ Example Input:
 //...
 ```
 
-Example Output:
+Example output:
 
 ```json
 {
