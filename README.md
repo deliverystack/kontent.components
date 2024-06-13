@@ -154,10 +154,6 @@ The **ContentComponent** content type snippet contains the ContentItem Linked it
   //...
 ```
 
-## Content Types
-
-This prototype uses the kontent.ai content types described in the following sections.
-
 ### The **PageContent** Content Type Snippet
 
 The **PageContent** content type snippet contains the MainComponents Linked items field that lets the CMS user select CMS Component items to populate the main region of the layout for the page.
@@ -204,6 +200,10 @@ The **PageContent** content type snippet contains the MainComponents Linked item
   //...
 }
 ```      
+
+## Content Types
+
+This prototype uses the kontent.ai content types described in the following sections.
 
 ### The SimplePage Page Content Type
 
