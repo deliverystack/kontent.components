@@ -67,6 +67,8 @@ Some information specific to kontent.ai:
 - Kontent.ai provides **Content Type Snippets**, which are partial content types that multiple actual content types can use. This reduces the burden on developers, makes content types more consistent, and allows developers to implenent changes in a single place that affect multiple content types.
 - The Webservice API used to retrieve an item from kontent.ai can include the referenced items, and in turn the items that those items reference, to the limit specifiedy by the `depth` query string paramter. When using this capability, the data from referenced items do not appear inline within the JSON representation of the item that contains the referencing fields, but under a separate `modular_content` key. This avoids unnecessary data duplication, which could happen if the page item or any item that it references in turn references another item twice), but makes accessing the referenced item data slightly more cumbersome. 
 
+![Kontent.ai Example Page Item](public/kontentai-example-page-item-structure.png "Kontent.ai Example Page Item")
+
 ## Types of Content Types
 
 This prototype includes four categories of content types:
