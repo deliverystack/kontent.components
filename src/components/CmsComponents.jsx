@@ -1,26 +1,64 @@
+import React, { useEffect, useState } from "react";
+import { getItem } from "../lib";
 import CmsBannerComponent from "./CmsBannerComponent.jsx";
 import CmsImagesComponent from "./CmsImagesComponent.jsx";
 import CmsRteComponent from "./CmsRteComponent.jsx";
 
-const CmsComponents = ({props, componentsField}) => {
-    return (<>{
-        // for each CMS component
-        props.item.elements[componentsField].value.map(component => {
+const CmsComponents = ({ props, componentsField }) => {
+    const [componentsData, setComponentsData] = useState([]);
 
-        // switch on the content type of the CMS component
-        const componentType = props.modular_content[component].system.type;
+    useEffect(() => {
+        const fetchComponents = async () => {
+            const componentPromises = props.elements[componentsField].value.map((component) => 
+                getItem(component)
+            );
+            const resolvedComponents = await Promise.all(componentPromises);
+            setComponentsData(resolvedComponents);
+        };
 
-        switch (componentType) {
-            case "rtecomponent":
-                return (<CmsRteComponent props={props} component={component} key={Math.random()} />);
-            case "imagecollectioncomponent":
-                    return (<CmsImagesComponent props={props} component={component} key={Math.random()}/>);
-            case "bannercomponent":
-                return (<CmsBannerComponent props={props} component={component} key={Math.random()}/>);
-            default:
-                return (<div>Update CmsComponents.jsx to handle {componentType}</div>);
-        }})
-    }</>)
-}
+        fetchComponents();
+    }, [props, componentsField]);
+
+    return (
+        <>
+            {componentsData.map((componentData, index) => {
+                const componentType = componentData.system.type;
+
+                switch (componentType) {
+                    case "rtecomponent":
+                        return (
+                            <CmsRteComponent
+                                props={props}
+                                component={componentData}
+                                key={index}
+                            />
+                        );
+                    case "imagecollectioncomponent":
+                        return (
+                            <CmsImagesComponent
+                                props={props}
+                                component={componentData}
+                                key={index}
+                            />
+                        );
+                    case "bannercomponent":
+                        return (
+                            <CmsBannerComponent
+                                props={props}
+                                component={componentData}
+                                key={index}
+                            />
+                        );
+                    default:
+                        return (
+                            <div key={index}>
+                                Update CmsComponents.jsx to handle {componentType}
+                            </div>
+                        );
+                }
+            })}
+        </>
+    );
+};
 
 export default CmsComponents;

@@ -1,52 +1,65 @@
 import React, { useEffect, useState } from 'react';
 import CmsComponents from './components/CmsComponents.jsx';
 import Stringify from './components/Stringify.jsx';
-import UseCmsItem from './components/UseCmsItem.jsx';
+import { default as EmbedCmsEntry, default as UseCmsEntry } from './components/UseCmsEntry.jsx';
 import { getItem } from "./lib";
 
 function App() {
-    // handle async API call to get item
-    const [data, setData] = useState([]);
-    
+    const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isNotFound, setIsNotFound] = useState(false);
+
     useEffect(() => {
         getData();
     }, []);
-    
+
     useEffect(() => {
-        window.cmsPageItem = data;
+        if (data) window.cmsPageItem = data;
     }, [data]);
 
     const getData = async () => {
         try {
-            // reduce requested URL path to last segment
-            // which should be a the codename of a Kontent.ai item.
-            var pagecode = window.location.pathname.split('/').pop() || 'home'
-            const response = await getItem(pagecode);
-            const result = await response.json();
-            setData(result);
+            const result = await getItem(window.location.pathname.split('/').pop() || 'home');
+            if (!result) {
+                setIsNotFound(true); // If no data is returned, treat it as a 404
+            } else {
+                setData(result);
+                setIsNotFound(false);
+            }
         } catch (error) {
-            console.log(error); //TODO: error management
+            console.log("Error fetching data:", error);
+            setIsNotFound(true); // Set to true in case of error
+        } finally {
+            setIsLoading(false); // Stop loading after attempt
         }
     };
-  
-    // this will happen until the fetch returns the Kontent.ai item JSON
-    if (data.length < 1) {
-        return <>Loading...</>;
+
+    if (isLoading) {
+        return <div>Loading...</div>;
     }
 
-    // if no such item exists in Kontent.ai
-    if (data["error_code"] === 100 || data["error_code"] === 1 || !data.item) {
-        return <>Handle HTTP 404 - {window.location.pathname.split('/').pop() || 'home'} (last segment of URL path) does not specify a valid Kontent.ai item codename. Replace &lt;ENVIRONMENT_ID&gt; in /src/lib.js if needed.
-        <pre>{JSON.stringify(data, null, 2)};</pre></>
+    if (isNotFound) {
+        return (
+            <div>
+                <h1>404 - Content Not Found</h1>
+                <p>
+                    The content item for the URL path <code>{window.location.pathname}</code> could
+                    not be found. Please check the item codename or update the configuration as needed.
+                </p>
+            </div>
+        );
     }
 
-    return (<>
-        <div className="App">
-            <CmsComponents componentsField="pagecontent__maincomponents" props={data}/>
-        </div>
-        <UseCmsItem />
-        <Stringify props={data} />
-    </>);
+    return (
+        <>
+            <div className="App">
+                <CmsComponents componentsField="pagecontent__maincomponents" props={data} />
+            </div>
+            <UseCmsEntry props={data} />
+            <Stringify props={data} />
+            <EmbedCmsEntry props={data} />
+        </>
+    );
 }
 
 export default App;
